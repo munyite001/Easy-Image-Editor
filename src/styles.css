@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+  /*========= Colors ========*/
+  --very-light-cyan: #E3F2FD;
+  --white: #FFF;
+  --light-gray: #CCC;
+  --dark-gray: #6C757D;
+  --whitish-gray: #F5F5F5;
+  --light-blue: #5372F0;
+  --darker-gray: #464646;
+  
+  --ff-primary: 'Poppins', sans-serif;
+  --radius: 5px;
+  --dark-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-primary);
+}
+
+/*
+=============== 
+Mobile Design
+===============
+*/
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-size: 14px;
+}
+
+#root {
+  width: 100vw;
+  height: 100%;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-light-cyan);
+}
+
+.container {
+  width: 90%;
+  max-width: 850px;
+  height: auto;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+ 
+}
+
+.container h2{
+  font-weight: 300;
+}
+
+.container .wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wrapper .preview-img {
+  margin: 1rem 0 ;
+  max-width: 490px;
+  max-height: 335px;
+  margin: 1rem auto;
+}
+
+.preview-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.edit-panel {
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--light-gray);
+}
+
+.filters h2 {
+  margin: 0.5rem 0 1rem;
+}
+
+.filters .options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.filters .options button {
+  height: 2.5rem;
+  font-size: 16px;
+  border: 1px solid var(--dark-gray);
+  background-color: var(--whitish-gray);
+  color: var(--darker-gray);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.filters .options button.active {
+  background-color: var(--light-blue);
+  color: var(--white);
+  border: 1px solid var(--light-blue);
+}
+
+.filters .filter-info {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-info p{
+  font-size: 18px;
+  color: var(--darker-gray);
+}
+
+.slider input {
+  width: 100%;
+  height: 5px;
+  accent-color: var(--light-blue);
+}
+
+.rotate {
+  margin: 1rem 0;
+}
+
+.rotate .options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls button {
+  padding: 11px 20px;
+  font-size: 14px;
+  border-radius: var(--radius);
+  outline: none;
+  color: var(--white);
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+
+.controls .reset-filters {
+  color: var(--dark-gray);
+  border: 1px solid var(--dark-gray);
+}
+
+.controls .reset-filters:hover {
+  color: var(--white);
+  background: var(--dark-gray);
+}
+
+.controls .row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls .choose-img{
+  background: var(--dark-gray);
+  border: 1px solid var(--dark-gray);
+}
+.controls .save-img{
+  margin-left: 5px;
+  background: var(--light-blue);
+  border: 1px solid var(--light-blue);
+}
+
+/*
+======================
+Slightly bigger screen
+======================
+*/
+
+@media screen and (min-width: 500px) and (max-width: 768px) {
+  .controls {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .controls .row {
+    width: auto;
+    flex-direction: row;
+  }
+}
+
+
+/*
+================= 
+Desktop Designs
+=================
+*/
+
+@media screen and (min-width: 768px) {
+
+  .container .wrapper {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .edit-panel {
+    width: 280px;
+    margin: 1rem;
+  }
+
+  .filters .options button {
+    padding: 0.5rem;
+  }
+
+  .controls {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .controls .row {
+    width: auto;
+    flex-direction: row;
+  }
+
+  .controls .reset-filters {
+    margin: 1rem;
+  }
+}
